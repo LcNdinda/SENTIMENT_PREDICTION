@@ -11,11 +11,11 @@ class ReviewClassifierConfig(AppConfig):
     def ready(self):
         # Adjust the path as needed
         ReviewClassifierConfig.model = load_model(
-            '/Users/lcndinda/PycharmProjects/pythonProject/Amazon/sentiment_analysis/review_classifier/final_model_2.h5',
+            '../final_model_2.h5',
             compile=False)
 
         # Load the tokenizer
         with open(
-                '/Users/lcndinda/PycharmProjects/pythonProject/Amazon/sentiment_analysis/review_classifier/tokenizer_2.pickle',
+                '../tokenizer_2.pickle',
                 'rb') as handle:
             ReviewClassifierConfig.tokenizer = pickle.load(handle)
